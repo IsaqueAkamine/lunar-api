@@ -84,7 +84,7 @@ class ProductModel {
   }
 
   async delete(id) {
-    await sql`DELETE FROM products WHERE id = '${id}'`;
+    await sql`DELETE FROM products WHERE id = ${id}`;
   }
 }
 
