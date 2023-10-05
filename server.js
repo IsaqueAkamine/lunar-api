@@ -1,6 +1,8 @@
 import { fastify } from "fastify";
 import { DataBasePostgres } from "./database-postgres.js";
 
+import productRoutes from "./src/routes/products/index.js";
+
 const server = fastify();
 
 const database = new DataBasePostgres();
@@ -55,6 +57,8 @@ server.delete("/videos/:id", async (request, reply) => {
 
   return reply.status(204).send();
 });
+
+server.register(productRoutes, { prefix: "/api" });
 
 server.listen({
   host: "0.0.0.0",
