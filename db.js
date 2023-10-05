@@ -1,8 +1,8 @@
 import postgres from "postgres";
 import { TempEnv } from "./tempEnv.js";
 
-// let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
-let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = TempEnv;
+let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
+// let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = TempEnv;
 
 export const sql = postgres({
   host: PGHOST,
